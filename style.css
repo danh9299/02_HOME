@@ -1,0 +1,148 @@
+html {
+  font-family: "Montserrat";
+}
+
+body {
+  background-color: #f6f6f6;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 30px;
+}
+
+.nav a {
+  padding: 0px 15px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.nav-home {
+  color: #40d4cf;
+}
+
+.nav-item {
+  color: #141414;
+}
+
+.text {
+  text-align: center;
+  padding: 30px 5px;
+}
+
+.text h1 {
+  font-weight: 900;
+  font-size: 30px;
+}
+
+.text p {
+  font-weight: 100;
+  max-width: 70%;
+  margin: 0 auto;
+  color: #838383;
+  font-size: 13px;
+}
+
+.work-row {
+  display: flex;
+  width: 100%;
+}
+
+.work-item-gray {
+  background-color: #f6f6f6;
+}
+
+.work-item-white {
+  background-color: #838383;
+}
+
+.work-item {
+  position: relative;
+  width: 25vw;
+  height: 25vw;
+}
+
+.eye-icon {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  display: none;
+}
+
+.work-item:hover {
+  background-color: #21bfb9;
+  .eye-icon {
+    display: block;
+  }
+}
+
+.footer {
+  background-color: #141414;
+  color: #ffffff;
+  display: flex;
+  padding: 30px;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+  color: rgb(88, 88, 255);
+}
+
+.footer h3 {
+  font-size: 13px;
+}
+
+.footer p3 {
+  font-size: 11px;
+}
+
+.footer li {
+  font-size: 11px;
+}
+
+.footer-copyright {
+  width: 25%;
+}
+
+.footer-contact {
+  width: 25%;
+}
+
+.footer ul {
+  list-style: none;
+}
+
+.footer-work {
+  width: 15%;
+}
+
+.footer-info {
+  width: 15%;
+}
+
+.footer-social {
+  width: 20%;
+}
+
+@media screen and (max-width: 610px) {
+  .footer h1 {
+    font-size: 10px;
+  }
+  .footer p3 {
+    font-size: 5px;
+  }
+  .footer a {
+    font-size: 5px;
+  }
+}
