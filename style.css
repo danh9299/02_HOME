@@ -28,12 +28,50 @@ body {
   padding: 30px 30px; 
 }
 
+.Header__menu {
+  display: none;
+  font-size: 20px;
+}
+
+@media (min-width: 410px) {
+  .Header-nav {
+    display: flex !important;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .Header-nav {
+    display: none;
+    flex-direction: column;
+    background-color: #838383;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    padding: 20px;
+    width: 50%;
+    height: 40%;
+    z-index: 3;
+    border: 1px solid;
+  }
+  
+  .Header-nav__item {
+    padding: 10px;
+    border-bottom: 1px solid #444;
+  }
+  
+  .Header__menu {
+    display: block;
+    cursor: pointer;
+  }
+}
+
 .Header-nav__item {
   padding: 0px 15px;
   font-size: 16px; 
   color: #141414;
   text-decoration: none;
   font-weight: 900;
+  text-transform: uppercase;
 }
 
 .Header-nav__item:hover {
@@ -45,17 +83,28 @@ body {
   padding: 30px 5px;
 }
 
-.Text-title {
+.Text__title {
   font-weight: 900;
   font-size: 30px;
+  padding: 10px;
 }
 
-.Text-description {
+.Text__description {
   font-weight: 100;
   max-width: 70%;
   margin: 0 auto;
   color: #838383;
   font-size: 13px;
+}
+
+@media screen and (max-width: 450px) {
+  .Text__title {
+    font-size: 18px;
+  }
+
+  .Text__description {
+    font-size: 9px;
+  }
 }
 
 .Work-row {
@@ -72,24 +121,23 @@ body {
   background-color: #f6f6f6;
 }
 
-.Work-row-item:nth-child(odd) {
+.Work-row > :nth-child(odd) {
   background-color: #838383;
 }
 
-.Work-row-item--reverse:nth-child(even) {
+.Work-row--reverse > :nth-child(even) {
   background-color: #838383;
 }
 
-.Work-row-item--reverse:nth-child(odd) {
+.Work-row--reverse > :nth-child(odd) {
   background-color: #f6f6f6;
 }
 
-
 .Work-row-item:hover {
   background-color: #21bfb9;
+  cursor: pointer;
   .Work-row-item__eye {
     display: block;
-    cursor: pointer;
   }
 }
 
@@ -108,20 +156,15 @@ body {
   padding: 30px;
 }
 
-.Footer a:hover {
-  text-decoration: underline;
-  color: rgb(88, 88, 255);
-}
-
 .Footer-copyright {
   width: 35%;
 }
 
-.Footer-copyright-company {
+.Footer-copyright__company {
   font-size: 13px;
 }
 
-.Footer-copyright-design {
+.Footer-copyright__design {
   font-size: 11px;
 }
 
@@ -135,6 +178,11 @@ body {
 
 .Footer-contact-group-item {
   font-size: 11px;
+}
+
+.Footer-contact-group-item__link:hover {
+  text-decoration: underline;
+  color: rgb(88, 88, 255);
 }
 
 .Footer-work {
@@ -151,6 +199,11 @@ body {
   font-size: 11px;
 }
 
+.Footer-work-group-item__link:hover {
+  text-decoration: underline;
+  color: rgb(88, 88, 255);
+}
+
 .Footer-info {
   width: 15%;
 }
@@ -164,48 +217,59 @@ body {
 }
 
 @media screen and (max-width: 600px) {
-  .Footer-copyright-company {
+  .Footer-copyright__company {
     font-size: 10px;
   }
-  .Footer-copyright-design {
+  
+  .Footer-copyright__design {
+    font-size: 10px;
+  }
+  
+  .Footer-contact-group-item__link {
+    font-size: 8px;
+  }
+  
+  .Footer-work-group-item__link {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .Footer-copyright__company {
+    font-size: 8px;
+  }
+  
+  .Footer-copyright__design {
+    font-size: 8px;
+  }
+  
+  .Footer-contact-group-item__link {
     font-size: 5px;
   }
-  .Footer a {
+  
+  .Footer-work-group-item__link {
     font-size: 5px;
   }
 }
 
-
-
-.Work-row-item--modal {
+.Work-modal {
+  display: none;
   position: fixed;
+  transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80vw; /* Kích thước tùy ý */
-  height: 80vh;
-  background-color: white; /* Màu nền */
-  z-index: 1000; /* Đặt lên trên cùng */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.3s ease;
+  width: 40vw;
+  height: 40vw;
+  z-index: 1000;
+  border-radius: 10px;  
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Ẩn nền ngoài */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 999;
-  display: none;
-}
-
-/* Khi modal được mở */
-.modal-overlay.show {
-  display: block;
+.Work-modal__close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 30px;
+  color: #333;
+  cursor: pointer;
 }
